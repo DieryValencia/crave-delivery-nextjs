@@ -1,31 +1,35 @@
 'use client'
 
 import React from 'react'
+
 import Image from 'next/image'
-import { userImage } from '@/data'
+
+// Profile image from image_0.png (woman with gaiter mask)
+const profileImg = "https://i.imgur.com/1Q9Z1ZB.png"; // Replace with actual image if available
 
 export const TopNavigation: React.FC = () => {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#FCFCFC] shadow-sm">
-      <div className="flex justify-between items-center px-5 py-4 w-full max-w-7xl mx-auto">
-        <div className="flex items-center gap-2">
-          <span className="text-xl font-black text-rose-500 italic tracking-tighter font-['Plus_Jakarta_Sans']">
-            Crave & Co
-          </span>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
-            <Image
-              src={userImage}
-              alt="User"
-              width={40}
-              height={40}
-              className="w-full h-full object-cover"
-            />
+    <nav className="fixed top-0 w-full z-50" style={{background: 'linear-gradient(90deg, #f8e1e7 0%, #fbeee3 100%)'}}>
+      <div className="flex items-center justify-between px-4 py-2 w-full max-w-2xl mx-auto min-h-[56px]">
+        {/* Left: Profile Image */}
+        <div className="flex items-center">
+          <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-white shadow-sm">
+            <Image src={profileImg} alt="Profile" width={36} height={36} className="w-full h-full object-cover" />
           </div>
-          <button className="material-symbols-outlined text-rose-500 hover:opacity-80 transition-opacity active:scale-95 transition-transform">
-            shopping_cart
-          </button>
+        </div>
+
+        {/* Center: Location */}
+        <div className="flex items-center gap-1">
+          <span className="material-symbols-outlined text-black text-lg">location_on</span>
+          <span className="text-base font-semibold text-black">Canada</span>
+          <span className="material-symbols-outlined text-black text-base">expand_more</span>
+        </div>
+
+        {/* Right: Menu Icon in Circle */}
+        <div className="flex items-center">
+          <span className="flex items-center justify-center w-9 h-9 rounded-full" style={{background:'#f8e1e7'}}>
+            <span className="material-symbols-outlined text-black text-2xl">menu</span>
+          </span>
         </div>
       </div>
     </nav>

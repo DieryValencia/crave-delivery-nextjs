@@ -4,8 +4,8 @@ import React from 'react'
 
 import Image from 'next/image'
 
-// Profile image from image_0.png (woman with gaiter mask)
-const profileImg = "https://i.imgur.com/1Q9Z1ZB.png"; // Replace with actual image if available
+// Profile image (Woman with red scarf - local asset)
+const profileImg = "/profile.png";
 
 export const TopNavigation: React.FC = () => {
   return (
